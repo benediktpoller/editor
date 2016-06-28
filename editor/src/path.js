@@ -125,7 +125,7 @@ var svgedit = svgedit || {};
 
     svgedit.path.addPointGrip = function (index, x, y) {
 
-        console.log('addPointGrip');
+        //console.log('addPointGrip');
         // create the container of all the point grips
         var pointGripContainer = svgedit.path.getGripContainer();
 
@@ -143,10 +143,31 @@ var svgedit = svgedit || {};
                 'shape-rendering': "crispEdges",
                 'stroke-width': 1,
                 'cursor': 'move',
-                'style': 'pointer-events:all',
-                'xlink:title': uiStrings.pathNodeTooltip
+                'style': 'pointer-events:all'
+                    //'xlink:title': uiStrings.pathNodeTooltip
             });
             pointGrip = pointGripContainer.appendChild(pointGrip);
+
+
+            if (index > 0) {
+
+                var newText = document.createElementNS(svgns, "text");
+                svgedit.utilities.assignAttributes(newText, {
+                    'id': "label_" + index,
+                    //'display': "none",
+                    //'r': svgedit.browser.isTouch() ? 10 : 5,
+                    //'height': svgedit.browser.isTouch() ? 10 : 5,
+                    'fill': "red",
+
+                    //'xlink:title': uiStrings.pathNodeTooltip
+                });
+
+                console.log(this.Segment);
+                var textNode = document.createTextNode("a new text");
+                newText.appendChild(textNode);
+
+                newText = pointGripContainer.appendChild(newText);
+            }
 
             /*
             var grip = $('#pathpointgrip_' + index);
@@ -155,16 +176,42 @@ var svgedit = svgedit || {};
             });*/
         }
         if (x && y) {
+
+            console.log(pointGrip.nodeName);
             // set up the point grip element and display it
 
-            var w = pointGrip.getAttribute('width') / 2;
+            var w = 10;
 
-            svgedit.utilities.assignAttributes(pointGrip, {
-                'x': x - w,
-                'y': y - w,
+            var properties = (pointGrip.nodeName === "rect") ? {
+                'x': x - w / 2,
+                'y': y - w / 2,
+                'width': w,
+                'height': w,
                 'display': "inline"
-            });
+            } : {
+                'cx': x,
+                'cy': y,
+                'display': "inline"
+            };
+            svgedit.utilities.assignAttributes(pointGrip, properties);
+
+            /*
+            svgedit.utilities.assignAttributes(pointGrip, {
+                'cx': x - w,
+                'cy': y - w,
+                'display': "inline"
+            });*/
+
+            if (newText) {
+                svgedit.utilities.assignAttributes(newText, {
+                    'x': x,
+                    'y': y,
+                    'display': "inline"
+                });
+            }
         }
+
+        console.log(pointGrip);
         return pointGrip;
     };
 
@@ -222,12 +269,12 @@ var svgedit = svgedit || {};
         if (update) {
             var pt = svgedit.path.getGripPt(seg);
 
-            var w = pointGrip.getAttribute('width') / 2;
-            console.log(w);
+            var w = pointGrip.getAttribute('r') / 2;
+
 
             svgedit.utilities.assignAttributes(pointGrip, {
-                'x': pt.x - w,
-                'y': pt.y - w,
+                'cx': pt.x - w,
+                'cy': pt.y - w,
                 'display': "inline"
             });
         }

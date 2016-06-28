@@ -838,10 +838,9 @@ button:active {
 .push_button_pressed {
     height: 27px;
     width: 27px;
-    border: solid #2f2f2c 8px;
-    border-left-width: 13px;
-    margin: 0;
-    background-color: #ddd;
+    background: #ccc;
+    margin: 0 auto;
+    padding: 0.5em;
     cursor: pointer;
 }
 #main_menu li#tool_open,

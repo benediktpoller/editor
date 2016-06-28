@@ -58,11 +58,11 @@ var svgedit = svgedit || {};
   // menu behavior is brought here.
   methodDraw.ready(function() {
     for (menuItem in contextMenuExtensions) {
-      injectExtendedContextMenuItemIntoDom(contextMenuExtensions[menuItem]);
+      //injectExtendedContextMenuItemIntoDom(contextMenuExtensions[menuItem]);
     }
   });
-  svgedit.contextmenu.resetCustomMenus = function(){self.contextMenuExtensions = {}}
-  svgedit.contextmenu.add = addContextMenuItem;
-  svgedit.contextmenu.hasCustomHandler = hasCustomHandler;
-  svgedit.contextmenu.getCustomHandler = getCustomHandler;
+  //svgedit.contextmenu.resetCustomMenus = function(){self.contextMenuExtensions = {}}
+  //svgedit.contextmenu.add = addContextMenuItem;
+  //svgedit.contextmenu.hasCustomHandler = hasCustomHandler;
+  //svgedit.contextmenu.getCustomHandler = getCustomHandler;
 })();

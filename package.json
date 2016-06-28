@@ -1,0 +1,23 @@
+{
+  "name": "evo",
+  "version": "1.0.0",
+  "description": "Method Draw is a fork of SVG Edit, a web based SVG editor.",
+  "main": "index.html",
+  "directories": {
+    "doc": "docs",
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://benediktpoller@github.com/benediktpoller/editor.git"
+  },
+  "author": "Benedikt Poller <benedikt.poller@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/benediktpoller/editor/issues"
+  },
+  "homepage": "https://github.com/benediktpoller/editor#readme"
+}
