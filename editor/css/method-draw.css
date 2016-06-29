@@ -526,8 +526,8 @@ div#workarea {
     position: absolute;
     content: '';
     border: solid #2f2f2c 2px;
-    top: -1px;
-    left: -1px;
+    top: 5px;
+    left: 5px;
     width: 26px;
     height: 26px;
     z-index: 0;

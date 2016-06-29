@@ -4249,6 +4249,10 @@ $.SvgCanvas = function (container, config) {
                         stretchy.setAttribute('d', ['M', mouse_x, mouse_y, mouse_x, mouse_y].join(' '));
                         var index = subpath ? svgedit.path.path.segs.length : 0;
                         svgedit.path.addPointGrip(index, mouse_x, mouse_y);
+
+
+                        svgedit.path.addLengthField(index, mouse_x, mouse_y, drawn_path.pathSegList);
+
                         svgedit.path.first_grip = null;
                     } else {
                         // determine if we clicked on an existing point
@@ -4406,8 +4410,12 @@ $.SvgCanvas = function (container, config) {
                             ctrlLine2.setAttribute('y2', y);
 
                             var index = num;
-                            if (subpath) index += svgedit.path.path.segs.length;
+                            if (subpath) {
+                                index += svgedit.path.path.segs.length;
+                            }
                             svgedit.path.addPointGrip(index, x, y);
+                            svgedit.path.addLengthField(index, x, y, drawn_path.pathSegList);
+
                         }
                         keep = true;
                     }
