@@ -1,0 +1,21 @@
+<svg width="1000" height="800" xmlns="http://www.w3.org/2000/svg">
+    <g fill="none">
+        <title>Giebelleiste</title>
+        <path stroke="#2d147e" stroke-linecap="round" stroke-width="7" opacity="1" style="pointer-events:inherit" d="M 114 639 L 270 639 L 270 281 L 475 143 L 744 272 L 744 639 L 922 639"></path>
+
+        <path id="arc1" fill="none" stroke="#2d147e" stroke-width="7" d="M 200 639 A 80 80 0 0 0 270 539"></path>
+
+        <path stroke="#c00" stroke-width="3" stroke-linecap="round" stroke-opacity="1" stroke-dasharray="5,1,5" style="pointer-events:inherit" d="M 114 632 L 263 632 L 263 277.5 L 474.5 135 L 751 267.5 L 751 632 L 922 632"></path>
+
+
+
+        <text x="180" y="620" fill="#444" font-family="Arial,Verdana">
+            <tspan x="178" y="618">156</tspan>
+            <tspan x="220" y="450">300</tspan>
+            <tspan x="330" y="195">230</tspan>
+            <tspan x="630" y="195">245</tspan>
+            <tspan x="765" y="450">302</tspan>
+            <tspan x="825" y="618">185</tspan>
+        </text>
+    </g>
+</svg>
